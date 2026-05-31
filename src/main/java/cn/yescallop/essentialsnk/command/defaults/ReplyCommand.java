@@ -2,7 +2,7 @@ package cn.yescallop.essentialsnk.command.defaults;
 
 import cn.nukkit.Player;
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.utils.TextFormat;
 import cn.yescallop.essentialsnk.EssentialsAPI;
@@ -20,7 +20,7 @@ public class ReplyCommand extends CommandBase {
         // command parameters
         this.commandParameters.clear();
         this.commandParameters.put("default", new CommandParameter[]{
-                CommandParameter.newType("message", false, CommandParamType.STRING)
+                CommandParameter.newType("message", false, CommandParamType.ID)
         });
         //KailynDev2024®
     }

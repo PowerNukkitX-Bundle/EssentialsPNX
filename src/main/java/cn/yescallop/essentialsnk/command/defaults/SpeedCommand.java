@@ -1,8 +1,9 @@
 package cn.yescallop.essentialsnk.command.defaults;
 
 import cn.nukkit.Player;
+import cn.nukkit.Server;
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.entity.effect.Effect;
 import cn.nukkit.entity.effect.EffectSpeed;
@@ -21,8 +22,8 @@ public class SpeedCommand extends CommandBase {
 
         // command parameters
         this.commandParameters.put("default", new CommandParameter[] {
-                CommandParameter.newType("multiplier", false, CommandParamType.INT),
-                CommandParameter.newType("player", true, CommandParamType.TARGET)
+                CommandParameter.newType("multiplier", false, CommandParamType.FLOAT),
+                CommandParameter.newType("player", true, CommandParamType.WILDCARD_SELECTION)
         });
         //KailynDev2024®
     }
@@ -36,9 +37,9 @@ public class SpeedCommand extends CommandBase {
             this.sendUsage(sender);
             return false;
         }
-        int speed;
+        float speed;
         try {
-            speed = Integer.valueOf(args[0]);
+            speed = Float.valueOf(args[0]);
         } catch (NumberFormatException e) {
             sender.sendMessage(TextFormat.RED + Language.translate("commands.generic.number.invalidinteger", args[0]));
             return false;
@@ -60,17 +61,10 @@ public class SpeedCommand extends CommandBase {
             return false;
         }
 
-        player.removeEffect(EffectType.SPEED);
-        if (speed != 0) {
-               player.getEntity().addEffect(
-                       Effect.get("speed")
-                               .setAmplifier(speed)
-                               .setDuration(Integer.MAX_VALUE)
-                       );
-
-
-        }
-
+        player.setVerticalFlySpeed(speed);
+        player.setHorizontalFlySpeed(player.getDefaultFlyingSpeed() * speed);
+        player.setWalkSpeed(speed);
+        player.setCheckMovement(Server.getInstance().getSettings().playerSettings().checkMovement() && speed == 1);
 
         if (sender == player) {
             sender.sendMessage(Language.translate("commands.speed.success", speed));

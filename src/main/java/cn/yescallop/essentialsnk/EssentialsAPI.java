@@ -25,6 +25,8 @@ import cn.nukkit.nbt.tag.FloatTag;
 import cn.nukkit.nbt.tag.ListTag;
 import cn.nukkit.permission.PermissionAttachmentInfo;
 import cn.nukkit.plugin.PluginLogger;
+import cn.nukkit.registry.BlockRegistry;
+import cn.nukkit.registry.Registries;
 import cn.nukkit.utils.Config;
 import cn.nukkit.utils.ConfigSection;
 import cn.yescallop.essentialsnk.util.ConfigType;
@@ -49,9 +51,7 @@ public class EssentialsAPI {
     private static final Pattern COOLDOWN_PATTERN = Pattern.compile("^essentialsnk\\.cooldown\\.([0-9]+)$", Pattern.CASE_INSENSITIVE);
     private static final Pattern TP_COOLDOWN_PATTERN = Pattern.compile("^essentialsnk\\.tp\\.cooldown\\.([0-9]+)$", Pattern.CASE_INSENSITIVE);
     private static final Pattern HOMES_PERMISSION_PATTERN = Pattern.compile("^essentialsnk\\.homes\\.([0-9]+)$", Pattern.CASE_INSENSITIVE);
-    public static final String[] NON_SOLID_BLOCKS = new String[]{Block.AIR, Block.ACACIA_SAPLING,Block.SPRUCE_SAPLING,Block.BAMBOO_SAPLING,Block.BIRCH_SAPLING,Block.CHERRY_SAPLING,Block.DARK_OAK_SAPLING,Block.JUNGLE_SAPLING,Block.OAK_SAPLING, Block.WATER, Block.FLOWING_WATER, Block.LAVA, Block.FLOWING_LAVA, Block.WEB, Block.TALL_GRASS, Block.SWEET_BERRY_BUSH,Block.DEADBUSH, Block.YELLOW_FLOWER,Block.CORNFLOWER,Block.TORCHFLOWER,
-            Block.POPPY, Block.BROWN_MUSHROOM, Block.RED_MUSHROOM, Block.TORCH, Block.FIRE, Block.WHEAT, Block.STANDING_SIGN,Block.OAK_HANGING_SIGN, Block.WALL_SIGN, Item.SUGAR_CANE,
-            Block.PUMPKIN_STEM, Block.MELON_STEM, Block.VINE, Block.CARROTS, Block.POTATOES, Block.SUNFLOWER,Block.ROSE_BUSH,Block.TALL_GRASS,Block.FERN,Block.PEONY};
+    public static final String[] NON_SOLID_BLOCKS = Registries.BLOCK.getKeySet().stream().map(Registries.BLOCK::get).filter(block -> !block.isSolid()).map(Block::getId).toArray(String[]::new);
     private static EssentialsAPI instance = null;
     private static Duration THIRTY_DAYS = Duration.ZERO.plusDays(30);
     private Vector3 temporalVector = new Vector3();

@@ -2,7 +2,7 @@ package cn.yescallop.essentialsnk.command.defaults.warp;
 
 import cn.nukkit.Player;
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.level.Location;
 import cn.nukkit.utils.TextFormat;
@@ -19,11 +19,11 @@ public class WarpCommand extends CommandBase {
         // command parameters
         commandParameters.clear();
         this.commandParameters.put("default", new CommandParameter[] {
-                CommandParameter.newType("warp",true,CommandParamType.TEXT)
+                CommandParameter.newType("warp",true,CommandParamType.RAW_TEXT)
         });
         this.commandParameters.put("other", new CommandParameter[] {
-                CommandParameter.newType("player",false,CommandParamType.TARGET),
-                CommandParameter.newType("warp",false,CommandParamType.STRING)
+                CommandParameter.newType("warp",false,CommandParamType.ID),
+                CommandParameter.newType("player",false,CommandParamType.WILDCARD_SELECTION)
         });
         //KailynDev2024®
     }

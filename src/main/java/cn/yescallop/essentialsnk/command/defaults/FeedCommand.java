@@ -3,12 +3,12 @@ package cn.yescallop.essentialsnk.command.defaults;
 import cn.nukkit.Player;
 import cn.nukkit.PlayerFood;
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.utils.TextFormat;
 import cn.yescallop.essentialsnk.EssentialsAPI;
 import cn.yescallop.essentialsnk.Language;
 import cn.yescallop.essentialsnk.command.CommandBase;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 
 import java.util.LinkedList;
 
@@ -21,7 +21,7 @@ public class FeedCommand extends CommandBase {
         // command parameters
         commandParameters.clear();
         this.commandParameters.put("default", new CommandParameter[] {
-                CommandParameter.newType("player", true, CommandParamType.TARGET)
+                CommandParameter.newType("player", true, CommandParamType.WILDCARD_SELECTION)
         });
         //KailynDev2024®
     }

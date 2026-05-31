@@ -2,7 +2,7 @@ package cn.yescallop.essentialsnk.command.defaults.home;
 
 import cn.nukkit.Player;
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.level.Location;
 import cn.nukkit.utils.TextFormat;
@@ -19,7 +19,7 @@ public class HomeCommand extends CommandBase {
         // command parameters
         commandParameters.clear();
         this.commandParameters.put("default", new CommandParameter[] {
-                CommandParameter.newType("home",true,CommandParamType.TEXT)
+                CommandParameter.newType("home",true,CommandParamType.RAW_TEXT)
         });
         //KailynDev2024®
     }

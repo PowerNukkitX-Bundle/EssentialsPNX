@@ -2,7 +2,7 @@ package cn.yescallop.essentialsnk.command.defaults;
 
 import cn.nukkit.Player;
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.item.Item;
 import cn.yescallop.essentialsnk.EssentialsAPI;
@@ -65,7 +65,7 @@ public class RepairCommand extends CommandBase {
                 }
                 break;
             case "hand":
-                Item item = player.getInventory().getItemInHand();
+                Item item = player.getInventory().getItemInMainHand();
                 if (!api.isRepairable(item)) {
                     sender.sendMessage(Language.translate("commands.repair.unrepairable"));
                     return false;

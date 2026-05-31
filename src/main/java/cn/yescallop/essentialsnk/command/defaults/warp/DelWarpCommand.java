@@ -1,7 +1,7 @@
 package cn.yescallop.essentialsnk.command.defaults.warp;
 
 import cn.nukkit.command.CommandSender;
-import cn.nukkit.command.data.CommandParamType;
+import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 import cn.nukkit.command.data.CommandParameter;
 import cn.nukkit.utils.TextFormat;
 import cn.yescallop.essentialsnk.EssentialsAPI;
@@ -17,7 +17,7 @@ public class DelWarpCommand extends CommandBase {
         // command parameters
         commandParameters.clear();
         this.commandParameters.put("default", new CommandParameter[] {
-                CommandParameter.newType("warp",false,CommandParamType.TEXT)
+                CommandParameter.newType("warp",false,CommandParamType.RAW_TEXT)
         });
         //KailynDev2024®
     }
