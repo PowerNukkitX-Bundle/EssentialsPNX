@@ -12,7 +12,7 @@ import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
 public class FlyCommand extends CommandBase {
 
     public FlyCommand(EssentialsAPI api) {
-        super("flyspeed", api);
+        super("fly", api);
 
         // command parameters
         commandParameters.clear();
