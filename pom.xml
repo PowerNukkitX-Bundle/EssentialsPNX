@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>cn.yescallop.essentialsnk</groupId>
     <artifactId>EssentialsPNX</artifactId>
-    <version>1.9.5</version>
+    <version>1.9.6</version>
 
     <name>EssentialsPNX</name>
     <description>Essential commands for your server</description>
@@ -45,7 +45,7 @@
         <dependency>
             <groupId>org.powernukkitx</groupId>
             <artifactId>server</artifactId>
-            <version>b-migration-SNAPSHOT</version>
+            <version>nightly-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

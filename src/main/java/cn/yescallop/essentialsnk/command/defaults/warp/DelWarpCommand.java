@@ -1,9 +1,9 @@
 package cn.yescallop.essentialsnk.command.defaults.warp;
 
-import cn.nukkit.command.CommandSender;
+import org.powernukkitx.command.CommandSender;
 import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
-import cn.nukkit.command.data.CommandParameter;
-import cn.nukkit.utils.TextFormat;
+import org.powernukkitx.command.data.CommandParameter;
+import org.powernukkitx.utils.TextFormat;
 import cn.yescallop.essentialsnk.EssentialsAPI;
 import cn.yescallop.essentialsnk.Language;
 import cn.yescallop.essentialsnk.command.CommandBase;

@@ -1,11 +1,11 @@
 package cn.yescallop.essentialsnk.command.defaults;
 
-import cn.nukkit.Player;
-import cn.nukkit.command.CommandSender;
+import org.powernukkitx.Player;
+import org.powernukkitx.command.CommandSender;
 import org.cloudburstmc.protocol.bedrock.data.command.CommandParamType;
-import cn.nukkit.command.data.CommandParameter;
-import cn.nukkit.event.player.PlayerChatEvent;
-import cn.nukkit.utils.TextFormat;
+import org.powernukkitx.command.data.CommandParameter;
+import org.powernukkitx.event.player.PlayerChatEvent;
+import org.powernukkitx.utils.TextFormat;
 import cn.yescallop.essentialsnk.EssentialsAPI;
 import cn.yescallop.essentialsnk.Language;
 import cn.yescallop.essentialsnk.command.CommandBase;
